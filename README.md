@@ -1,4 +1,4 @@
-# GUI POCSAG Sender tool for HackRF for Windows
+# GUI POCSAG Pager message Sender tool for HackRF for Windows
 Based on my project that implements POCSAG protocol and HackRF transmitter on C++:
 <br />https://github.com/goshante/pocsag-hackrf-tx
 <br />
