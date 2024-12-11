@@ -73,14 +73,14 @@ public:
 
 	//Safe to call while TX is active
 	void PushSamples(const HackRF_PCMSource& samples);
-	bool WaitForEnd(const std::chrono::milliseconds timeout);
-	bool WaitForIdle(const std::chrono::milliseconds timeout);
 
+	bool WaitForEnd(const std::chrono::milliseconds timeout) const;
+	bool WaitForIdle(const std::chrono::milliseconds timeout) const;
 	uint32_t GetDeviceSampleRate() const;
 	uint32_t GetChunkSizeSamples() const;
 	bool IsIdle() const;
 	bool IsRunning() const;
-
+	
 	//Excepts on call attempt while TX is active
 	void SetFrequency(uint64_t mhz, uint64_t khz, uint64_t hz = 0);
 	void SetFrequency(uint64_t hz);

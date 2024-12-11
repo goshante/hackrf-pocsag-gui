@@ -15,11 +15,8 @@
 class IHackRFData
 {
 public:
-	IHackRFData() {};
-	~IHackRFData() {};
+	virtual ~IHackRFData() = default;
 
-protected:
+public:
 	virtual int onData(int8_t* buffer, uint32_t length) = 0;
-
-	friend class HackRFDevice;
 };

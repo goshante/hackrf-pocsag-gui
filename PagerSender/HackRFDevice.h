@@ -28,7 +28,7 @@ public:
 	HackRFDevice();
 	~HackRFDevice();
 
-protected:
+public:
 	int HackRFCallback(int8_t* buffer, uint32_t length);
 	bool Open(IHackRFData *handler);
 	void SetFrequency(uint64_t freg);
@@ -39,7 +39,4 @@ protected:
 	bool StopTx();
 	void Close();
 	bool IsRunning() const;
-
-	friend class HackRFTransmitter;
-	friend int _hackrf_tx_callback(hackrf_transfer* transfer);
 };

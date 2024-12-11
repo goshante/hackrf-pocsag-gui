@@ -19,21 +19,21 @@
 
 namespace POCSAG
 {
-	constexpr const uint32_t NUMERIC_CHAR_SIZE_BITS = 4;
-	constexpr const uint32_t ALPHANUMERIC_CHAR_SIZE_BITS = 7;
-	constexpr const uint32_t ADDR_MAX = 2097151;
-	constexpr const uint32_t CW_MESSAGE_BIT = 0x80000000;
-	constexpr const uint32_t SYNC_CODEWORD = 0x7CD215D8;
-	constexpr const uint32_t IDLE_CODEWORD = 0x7A89C197;
-	constexpr const uint32_t CW_MSG_SIZE_BITS = 20;
-	constexpr const uint32_t FRAMES_PER_BATCH = 8;
-	constexpr const uint32_t CW_PER_FRAMES = 2;
-	constexpr const uint32_t BATCH_SIZE_IN_CW = (FRAMES_PER_BATCH * CW_PER_FRAMES) + 1;
-	constexpr const uint32_t BATCH_MESSAGE_MAX_BITS = FRAMES_PER_BATCH * CW_PER_FRAMES * CW_MSG_SIZE_BITS;
-	constexpr const uint32_t PREAMBLE_SIZE_BYTES = 72;
-	constexpr const uint8_t  PREAMBLE_SEQUENCE = 0xAA; //10101010
-	constexpr const uint16_t PCM_AMPLITUDE = 5000;
-	constexpr const uint32_t WAVE_FORMAT_PCM = 1;
+	constexpr uint32_t NUMERIC_CHAR_SIZE_BITS = 4;
+	constexpr uint32_t ALPHANUMERIC_CHAR_SIZE_BITS = 7;
+	constexpr uint32_t ADDR_MAX = 2097151;
+	constexpr uint32_t CW_MESSAGE_BIT = 0x80000000;
+	constexpr uint32_t SYNC_CODEWORD = 0x7CD215D8;
+	constexpr uint32_t IDLE_CODEWORD = 0x7A89C197;
+	constexpr uint32_t CW_MSG_SIZE_BITS = 20;
+	constexpr uint32_t FRAMES_PER_BATCH = 8;
+	constexpr uint32_t CW_PER_FRAMES = 2;
+	constexpr uint32_t BATCH_SIZE_IN_CW = (FRAMES_PER_BATCH * CW_PER_FRAMES) + 1;
+	constexpr uint32_t BATCH_MESSAGE_MAX_BITS = FRAMES_PER_BATCH * CW_PER_FRAMES * CW_MSG_SIZE_BITS;
+	constexpr uint32_t PREAMBLE_SIZE_BYTES = 72;
+	constexpr uint8_t  PREAMBLE_SEQUENCE = 0xAA; //10101010
+	constexpr uint16_t PCM_AMPLITUDE = 5000;
+	constexpr uint32_t WAVE_FORMAT_PCM = 1;
 
 	using Codeword_t = uint32_t;
 	using NumericBuffer_t = std::vector<std::bitset<NUMERIC_CHAR_SIZE_BITS>>;

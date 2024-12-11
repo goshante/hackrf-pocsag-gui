@@ -16,19 +16,19 @@
 
 static inline int16_t pcm8to16bit(int8_t sample)
 {
-    constexpr const int16_t mult = 32767 / 255;
+    constexpr int16_t mult = 32767 / 255;
     return sample * mult;
 }
 
 static inline int16_t pcm32to16bit(int32_t sample)
 {
-    constexpr const int32_t mult = 2147483647 / 32767;
+    constexpr int32_t mult = 2147483647 / 32767;
     return sample / mult;
 }
 
 static inline int16_t pcm24to16bit(int32_t sample)
 {
-    constexpr const int32_t mult = 8388607 / 32767;
+    constexpr int32_t mult = 8388607 / 32767;
     return sample / mult;
 }
 
@@ -142,6 +142,16 @@ HackRF_PCMSource::HackRF_PCMSource(const void* sampleBufferRaw, size_t bufSize, 
 
 HackRF_PCMSource::~HackRF_PCMSource()
 {
+}
+
+uint32_t HackRF_PCMSource::GetSamplingRate() const
+{
+    return m_samplingRate;
+}
+
+const std::vector<float>& HackRF_PCMSource::GetRawBuf() const
+{
+    return m_buf;
 }
 
 HackRF_PCMSource::HackRF_PCMSource(const std::vector<uint8_t>& buf)
